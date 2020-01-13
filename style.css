@@ -2,3 +2,15 @@ table, tr, th, td {
     border: 1px solid black;
     border-collapse: collapse;
 }
+
+/* --------------------- */
+
+body {
+    color: rgb(31, 176, 212);
+    background-color: rgb(48, 47, 47);
+}
+
+a {
+    color: white;
+}
+
