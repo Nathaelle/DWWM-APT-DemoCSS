@@ -1,6 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
 table, tr, th, td {
-    border: 1px solid black;
+    border: 1px solid rgb(129, 208, 228);
     border-collapse: collapse;
+}
+
+th {
+    background-color: rgb(31, 176, 212);
+    color: white;
+}
+
+td {
+    background-color: white;
+    color: rgb(31, 176, 212);
 }
 
 /* --------------------- */
@@ -10,7 +25,34 @@ body {
     background-color: rgb(48, 47, 47);
 }
 
+h1 {
+    background-color: white;
+}
+
+h2 {
+    color: rgb(129, 208, 228);
+}
+
 a {
     color: white;
+}
+
+p, p a {
+    color: black;
+    background-color: white;
+}
+
+.red-item, .red-item a {
+    background-color: grey;
+    color: white;
+}
+
+.red-item, .green-item {
+    padding: 10px;
+}
+
+.green-item, .green-item a {
+    background-color: white;
+    color: grey;
 }
 

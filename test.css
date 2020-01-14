@@ -1,0 +1,77 @@
+/* Important 1ère chose à vérifier : la liaison entre cette feuille de style et le document HTML
+    Présence de la balise link (<link rel="stylesheet" type="text/css" href="test.css">)
+    dans la section <head> du document.
+
+    Propriétés CSS :
+    - color : modifier couleur du texte
+    - background-color : modifier couleur arrière plan
+    - background-image : ajouter une image en arrière plan
+    Syntaxe background-image : url(" <chemin-de-l-image> ");
+    + background-position (défini la place de l'image sur l'arrière plan) https://developer.mozilla.org/fr/docs/Web/CSS/background-position
+    + background-repeat (permet ou non au motif de se répéter sur un axe, ou les deux) https://developer.mozilla.org/fr/docs/Web/CSS/background-repeat
+    + background-size (gère la place occupée par l'image) https://developer.mozilla.org/fr/docs/Web/CSS/background-size
+    + background-attachment (permet de fixer l'image avec la valeur fixed)
+
+    - margin : marge externe de l'élément (en px)
+    margin : auto -> permet de centrer un élément dimensionné
+    - padding : marge interne de l'élément (en px)
+    - width : largeur de l'élément (en px ou en % de son élément parent)
+    - height : hauteur de l'élément (en px)
+    - border : ajouter une bordure
+    Syntaxe border : <epaisseur-de-la-bordure-en-px> <style-de-bordure> <couleur>;
+
+    text-align : alignement du texte (left center right justify) https://developer.mozilla.org/fr/docs/Web/CSS/text-align
+    font-size : gérer la taille de la police https://developer.mozilla.org/fr/docs/Web/CSS/font-size 
+
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url("img/fond.webp");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    width: 60%;
+    margin: auto;
+}
+
+h2, h1 {
+    background-color: rgba(105, 72, 172, 0.8);
+    color: white;
+    padding : 10px;
+    text-align: center;
+    margin: 6px 0;
+}
+
+h1 {
+    position: fixed;
+    transform: rotate(-90deg);
+    width: calc(95vh);
+    left: -11%;
+    top: 44vh;
+    border-radius: 50px 50px 0 0;
+    box-shadow: 0 2px 5px rgb(0, 0, 0), inset 0 2px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: -1px -1px 5px rgba(0, 0, 0, 0.6);
+    text-transform: uppercase;
+}
+
+h2 {
+    border-radius:  0 50px 0 0;
+    font-variant: small-caps;
+}
+
+p {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: rgb(51, 24, 105);
+    padding : 10px;
+}
+
+/* Avec utilisation des classes */
+
+.gray {
+    background-color: rgb(48, 42, 51);
+    color: white;
+}
