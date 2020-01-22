@@ -1,0 +1,72 @@
+body {   
+    background-color: rgb(131, 146, 165);
+}
+
+section {
+    width: 80%;
+    margin: auto;
+    background-color: white;
+    padding: 10px;
+}
+
+article {
+    width: 40%;
+    background-color: lightsteelblue;
+    padding: 10px;
+}
+
+header {
+    border: 2px solid violet;
+    padding: 10px;
+    background-image: url('img/machine.jpeg');
+}
+
+nav {
+    border: 2px solid orange;
+    padding: 10px;
+}
+
+footer {
+    border: 2px solid green;
+    padding: 10px;
+}
+
+.illustration {
+    float: right;
+}
+
+p {
+    font-size: 1.5em;
+    text-align: justify;
+}
+
+/* Doc pour l'utilisation des colonnes :
+    Colonnes :
+    https://developer.mozilla.org/fr/docs/Web/CSS/columns 
+    Goutières :
+    https://developer.mozilla.org/fr/docs/Web/CSS/column-gap
+*/
+.dernier {
+    clear: both;
+    columns: 3;
+    column-gap: 2em;
+}
+
+.intro {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.italique {
+    font-style: italic;
+}
+
+.articles {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+

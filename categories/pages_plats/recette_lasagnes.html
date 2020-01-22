@@ -55,5 +55,41 @@
         <li>Ajouter la purée de tomates, l'eau et les herbes.</li>
     </ol>
 
+    <p><a href="recette_lasagnes.html#formulaire">Laissez-nous votre avis</a></p>
+
+    <!-- (formulaire) form -> élément formulaire, pour transmettre des données -->
+    <form action="#" method="POST" id="formulaire">
+        <p class="text-right"><a href="recette_lasagnes.html">X</a></p>
+
+        <p>
+            <label for="nom">Votre nom </label>
+            <input type="text" id="nom" name="nom">
+        </p>
+        <p>
+            <label for="nom">Adresse email </label>
+            <input type="text" id="email" name="email">
+        </p>
+        <p>
+            <label for="message">Votre message </label>
+            <textarea id="message" name="message"></textarea>
+        </p>
+        <p>
+            Votre note : <br>
+            <input type="radio" id="note0" value="0" name="note">
+            <label for="note0"> 0 </label>
+            <input type="radio" id="note1" value="1" name="note">
+            <label for="note1"> 1 </label>
+            <input type="radio" id="note2" value="2" name="note">
+            <label for="note2"> 2 </label>
+            <input type="radio" id="note3" value="3" name="note">
+            <label for="note3"> 3 </label>
+            <input type="radio" id="note4" value="4" name="note">
+            <label for="note3"> 4 </label>
+            <input type="radio" id="note5" value="5" name="note">
+            <label for="note3"> 5 </label>
+             / 5
+        </p>
+        <p><input type="submit" value="C'est OK !"></p>
+    </form>
 </body>
 </html>

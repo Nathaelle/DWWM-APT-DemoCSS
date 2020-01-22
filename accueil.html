@@ -6,45 +6,94 @@
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <h1>Bienvenue sur la page d'accueil de mon super site de recettes</h1>
+    <h1>Mes meilleures recettes</h1>
 
-    <!-- Exemple simple de lien vers une autre page 
-    Pour créer un lien on utilise la balise a (anchor)
-    Qui possède l'attribut obligatoire href (hypertext reference) 
-    Qui défini le chemin (ici relatif à notre emplacement) vers le fichier à charger -->
-    <p><a href="categories/pages_plats/recette_lasagnes.html">La recette des lasagnes</a></p>
-    
-    <!-- Menu de navigation simple -->
-    <ul>
-        <li class="green-item"><a href="accueil.html">Accueil</a></li>
-        <li class="red-item"><a href="categories/entrees.html">Les entrées</a></li>
-        <li class="green-item"><a href="categories/plats.html">Les plats</a></li>
-        <li class="red-item"><a href="categories/desserts.html">Les desserts</a></li>
+    <!-- Menu de navigation hierarchisé -->
+    <ul class="menu">
+        <li><a href="accueil.html">Accueil</a></li>
+        <li class="for-small"><a href="accueil.html#menuentrees">Les entrées</a>
+            <ul class="sous-menu" id="menuentrees">
+                <li class="retour"><a href="accueil.html">&larr; Retour menu principal</a></li>
+                <li><a href="categories/pages_entrees/recette_salade_nicoise.html">Salade Niçoise</a></li>
+                <li><a href="categories/pages_entrees/recette_tarte_poireaux.html">Tarte aux poireaux</a></li>
+            </ul>
+        </li>
+        <li class="for-large"><a href="categories/entrees.html">Les entrées</a>
+            <ul class="sous-menu">
+                <li><a href="categories/pages_entrees/recette_salade_nicoise.html">Salade Niçoise</a></li>
+                <li><a href="categories/pages_entrees/recette_tarte_poireaux.html">Tarte aux poireaux</a></li>
+            </ul>
+        </li>
+        <li class="for-small"><a href="accueil.html#menuplats">Les plats</a>
+            <ul class="sous-menu" id="menuplats">
+                <li class="retour"><a href="accueil.html">&larr; Retour menu principal</a></li>
+                <li><a href="categories/pages_plats/recette_gratin_courgettes.html">Gratin de courgettes</a></li>
+                <li><a href="categories/pages_plats/recette_lasagnes.html">Lasagnes bolognaise</a></li>
+            </ul>
+        </li>
+        <li class="for-large"><a href="categories/plats.html">Les plats</a>
+            <ul class="sous-menu">
+                <li><a href="categories/pages_plats/recette_gratin_courgettes.html">Gratin de courgettes</a></li>
+                <li><a href="categories/pages_plats/recette_lasagnes.html">Lasagnes bolognaise</a></li>
+            </ul>
+        </li>
+        <li class="for-small"><a href="accueil.html#menudesserts">Les desserts</a>
+            <ul class="sous-menu" id="menudesserts">
+                <li class="retour"><a href="accueil.html">&larr; Retour menu principal</a></li>
+                <li><a href="categories/pages_desserts/recette_mousse_chocolat.html">Mousse au chocolat</a></li>
+            </ul>
+        </li>
+        <li class="for-large"><a href="categories/desserts.html">Les desserts</a>
+            <ul class="sous-menu">
+                <li><a href="categories/pages_desserts/recette_mousse_chocolat.html">Mousse au chocolat</a></li>
+            </ul>
+        </li>
     </ul>
 
-    <!-- Exemple de la carte construite avec un élément figure
-    https://developer.mozilla.org/fr/docs/Web/HTML/Element/figure 
-    adapté pour contenir une illustration et sa légende (figcaption) -->
-    <figure>
-        <a href="categories/pages_entrees/recette_tarte_poireaux.html">
-            <img src="img/tarte.jpg" width="150">
-        </a>
-        <figcaption class="green-item"><a href="categories/pages_entrees/recette_tarte_poireaux.html">Tarte aux poireaux</a></figcaption>
-    </figure>
 
-    <figure>
-        <a href="categories/pages_plats/recette_lasagnes.html">
-            <img src="img/lasagnes.jpg" width="150">
-        </a>
-        <figcaption class="red-item"><a href="categories/pages_plats/recette_lasagnes.html">Lasagnes à la bolognaise</a></figcaption>
-    </figure>
+    <section class="carte">
+        <h2>Ma carte du jour</h2>
+        <figure>
+            <figcaption><a href="categories/pages_entrees/recette_tarte_poireaux.html">Tarte aux poireaux</a></figcaption>
+        
+            <a href="categories/pages_entrees/recette_tarte_poireaux.html">
+                <img src="img/tarte.jpg" width="150">
+            </a>
+            </figure>
 
-    <figure>
-        <a href="categories/pages_desserts/recette_mousse_chocolat.html">
-            <img src="img/mousse.webp" width="150">
-        </a>
-        <figcaption class="green-item"><a href="categories/pages_desserts/recette_mousse_chocolat.html">Mousse au chocolat</a></figcaption>
-    </figure>
+        <figure>
+            <figcaption><a href="categories/pages_plats/recette_lasagnes.html">Lasagnes à la bolognaise</a></figcaption>
+        
+            <a href="categories/pages_plats/recette_lasagnes.html">
+                <img src="img/lasagnes.jpg" width="150">
+            </a>
+         </figure>
+
+        <figure>
+            <figcaption><a href="categories/pages_desserts/recette_mousse_chocolat.html">Mousse au chocolat</a></figcaption>
+        
+            <a href="categories/pages_desserts/recette_mousse_chocolat.html">
+                <img src="img/mousse.webp" width="150">
+            </a>
+         </figure>
+    </section>
+
+    <section class="carte">
+        <h2>Découvrez aussi...</h2>
+    </section>
+
+    <section class="anim for-large">
+        <div class="cupcake" id="cupcake1"></div>
+        <div class="cupcake" id="cupcake2"></div>
+        <div class="cupcake" id="cupcake3"></div>
+        <div class="cupcake" id="cupcake4"></div>
+        <div class="cupcake" id="cupcake5"></div>
+        <div class="cupcake" id="cupcake6"></div>
+        <div class="cupcake" id="cupcake7"></div>
+        <div class="cupcake" id="cupcake8"></div>
+        <div class="cupcake" id="cupcake9"></div>
+        <div class="cupcake" id="cupcake10"></div>
+    </section>
 
 </body>
 </html>

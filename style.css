@@ -1,7 +1,142 @@
+/* ************************************************************************
+   ************************* (général & small) ****************************
+   ************************************************************************ */
+
 * {
     margin: 0;
     padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+} 
+
+body {
+    color: rgb(31, 176, 212);
+    background-color: rgb(48, 47, 47);
 }
+
+h1 {
+    background-color: white;
+    font-size: 2em;
+    padding: 0.5em;
+}
+
+h2 {
+    color: rgb(72, 212, 247);
+}
+
+a {
+    color: white;
+}
+
+/* ******************** MENU DE NAVIGATION **********************
+   ************************************************************** */
+
+.menu {
+    position: absolute; /* Positionné (donc hors du flux de la page)... */
+    z-index: 100; /* ...pour être toujours visible... */
+    display: flex; /* ...en utilisant les fonctionnalités Flexbox... */
+    flex-direction: column; /* ...en colonne (menu pour mobile)... */
+    width: 100%; /* ...occupant 100% de la largeur disponible. */
+    background-color: rgb(31, 176, 212); 
+    list-style-type: none; /* Suppression des puces de la liste */
+}
+
+.menu li {
+    width: 100%; /* Occupe 100% de la largeur de son élément parent (la liste .menu) */
+    border-top: 1px solid rgb(17, 71, 85);
+}
+
+.menu li a {
+    display: inline-block;
+    padding: 17px 1.5em 12px;
+    width: calc(100% - 3em);/* Permet d'effectuer un calcul mathématique */
+    font-size: 1.2em;
+    text-decoration: none;
+    height: 30px;
+}
+
+.menu li a:hover {
+    text-decoration: underline;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.menu li .sous-menu {
+    display: none;
+    background-color: rgb(31, 176, 212);
+    list-style-type: none;
+}
+
+.sous-menu li {
+    width: 100%;
+}
+
+/* Gestion du menu pour les smartphones 
+ * On masque les éléments de navigation pour les écrans + larges 
+ * On cible chaque sous menu individuellement */
+
+.menu li.for-large {
+    display: none; /* On masque les éléments de liste prévus pour les écrans plus larges */
+}
+
+#menuentrees, #menuplats, #menudesserts {
+    position: absolute; /* Permet au sous-menu d'utiliser la même place que le menu ... */
+    top: 0;
+    min-height: 30vh; /* ... en masquant celui-ci... */
+    width: 100vw; /* Et en occupant toute la largeur disponible */
+}
+
+#menuentrees:target, #menuplats:target, #menudesserts:target {
+    display: block; /* Si un des sous-menus est ciblé (ancre HTML), il s'affiche (redevient un block)*/
+}
+
+/* ******************** ACCUEIL **********************
+   *************************************************** */
+
+.carte {
+    margin-top: 30vh;
+    display: flex;
+    align-items: center;
+    flex-flow: column wrap;
+}
+
+.carte h2 {
+    width: 100%;
+    height: 40px;
+    border-bottom: 2px solid rgb(31, 176, 212);
+    margin-bottom: 10px;
+}
+
+figure {
+    width: 80%;
+    height: 300px;
+    overflow: hidden;
+}
+
+figure img {
+    width: 100%;
+    margin-top: -50px;
+}
+
+figure figcaption {
+    width: 100%;
+    position: relative;
+    top: 0;
+    text-align: center;
+    background-color: rgba(0,0,0,0.6);
+    height: 50px;
+}
+
+figure figcaption a {
+    display: inline-block;
+    text-decoration: none;
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    text-align: center;
+    height: 30px;
+}
+
+/* ******************** TABLES **********************
+   ************************************************** */
 
 table, tr, th, td {
     border: 1px solid rgb(129, 208, 228);
@@ -18,41 +153,192 @@ td {
     color: rgb(31, 176, 212);
 }
 
-/* --------------------- */
+/* ******************** FORMS **********************
+   ************************************************* */
 
-body {
-    color: rgb(31, 176, 212);
+#formulaire {
+    display: none;
+    position: fixed;
     background-color: rgb(48, 47, 47);
+    border: 3px solid rgb(31, 176, 212);
+    border-radius: 5px;
+    top: 100px;
+    width: 60%;
+    left: 20%;
 }
 
-h1 {
-    background-color: white;
+#formulaire:target {
+    display: block;
 }
 
-h2 {
-    color: rgb(129, 208, 228);
+.text-right {
+    text-align: right;
 }
 
-a {
-    color: white;
+/* ************************************************************************
+   *************************** (medium) ***********************************
+   ************************************************************************ */
+
+@media (min-width:640px) {
+    
+    h1 {
+        background-color: white;
+        font-size: 3em;
+    }
+
+    /* **************** MENU DE NAVIGATION (medium) *************
+       ********************************************************** */
+
+    .menu {
+        flex-direction: row;
+        justify-content: space-between;
+        height: 60px;
+    }
+
+    .menu li {
+        width: 25%;
+        height: 60px;
+        border-top: none;
+    }
+
+    .sous-menu li {
+        width: 100%;
+        border-top: 1px solid rgb(149, 230, 250);
+    }
+
+    /* Gestion du menu pour les tablettes 
+    * On masque les éléments de navigation pour les écrans + larges 
+    * On masque également les éléments .retour
+    * On cible chaque sous menu individuellement */
+
+    .retour {
+        display: none;
+    }
+
+    #menuentrees, #menuplats, #menudesserts {
+        position: relative; /* Permet au sous-menu d'utiliser la même place que le menu ... */
+        min-height: 20vh; /* ... en masquant celui-ci... */
+        width: 25vw; /* Et en occupant toute la largeur disponible */
+    }
+    
+    #menuentrees:target, #menuplats:target, #menudesserts:target {
+        display: block; /* Si un des sous-menus est ciblé (ancre HTML), il s'affiche (redevient un block)*/
+    }
+    
+
+    /* *************** ACCUEIL (medium) ****************
+       ************************************************* */
+
+    .carte {
+        display: flex;
+        align-items: stretch;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        margin: auto;
+        margin-top: 15vh;
+    }
+
+    figure {
+        width: 32vw;
+        height: calc(32vw * 2/3);
+    }
+
+    figure:hover {
+        box-shadow: -3px 5px 6px rgba(31, 176, 212, 0.8);
+    }
+
+    figure:hover figcaption {
+        background-color: rgba(31, 176, 212, 0.8);
+    }
+
 }
 
-p, p a {
-    color: black;
-    background-color: white;
+/* ************************************************************************
+   ******************************* (large) ********************************
+   ************************************************************************ */
+
+@media (min-width:1024px) {
+
+    /* **************** MENU DE NAVIGATION (large) *************
+       ********************************************************** */
+    /* Gestion du menu pour les écrans larges 
+    * On masque les éléments de navigation pour les écrans + petits 
+    * On utilise le hover pour créer un menu déroulant */
+
+    .menu li.for-small {
+        display: none;
+    }
+
+    .menu li.for-large {
+        display: block;
+    }
+
+    .menu li:hover .sous-menu {
+        display: block;
+    }
+    
+    /* *************** ACCUEIL (large) ****************
+       ************************************************* */
+
+    .carte {
+        width: 80%;
+    }
+
+    figure {
+        width: 26.2vw;
+        height: calc(26.2vw * 2/3);
+    }
+
+    .anim {
+        display: flex;
+        justify-content: center;
+    }
+
+    .cupcake {
+        width: 5vw;
+        height: calc(5vw);
+        background-image: url("img/cupcake.png");
+        background-size: cover;
+        animation-name: monanim;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        opacity: 0
+    }
+
+    #cupcake1 { animation-delay: 0;}
+    #cupcake2 { animation-delay: 0.5s;}
+    #cupcake3 { animation-delay: 1s;}
+    #cupcake4 { animation-delay: 1.5s;}
+    #cupcake5 { animation-delay: 2s;}
+    #cupcake6 { animation-delay: 2.5s;}
+    #cupcake7 { animation-delay: 3s;}
+    #cupcake8 { animation-delay: 3.5s;}
+    #cupcake9 { animation-delay: 4s;}
+    #cupcake10 { animation-delay: 4.5s;}
+
+    @keyframes monanim {
+        0% { 
+            transform: rotate(0deg) translateY(0);
+            opacity: 0;
+        }
+        25% { 
+            transform: rotate(10deg) translateY(10px); 
+        }
+        50%{ 
+            transform: rotate(0deg) translateY(0); 
+            opacity: 1;
+        }
+        75% { 
+            transform: rotate(-10deg) translateY(-10px); 
+        }
+        100%{ 
+            transform: rotate(0deg) translateY(0); 
+            opacity: 0;
+        }
+    }
+    
+
 }
 
-.red-item, .red-item a {
-    background-color: grey;
-    color: white;
-}
 
-.red-item, .green-item {
-    padding: 10px;
-}
-
-.green-item, .green-item a {
-    background-color: white;
-    color: grey;
-}
 

@@ -64,9 +64,10 @@ h2 {
 }
 
 p {
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: #FF3388; /* rgba(255, 255, 255, 1) */
     color: rgb(51, 24, 105);
     padding : 10px;
+    border-right: 5px dashed rgb(51, 24, 105);
 }
 
 /* Avec utilisation des classes */
@@ -74,4 +75,9 @@ p {
 .gray {
     background-color: rgb(48, 42, 51);
     color: white;
+}
+
+#super-important {
+    font-size: 2em;
+    color: red;
 }
