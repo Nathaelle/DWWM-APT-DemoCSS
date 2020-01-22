@@ -123,6 +123,9 @@ figure figcaption {
     text-align: center;
     background-color: rgba(0,0,0,0.6);
     height: 50px;
+    transition: ease-in-out;
+    transition-duration: 1s;
+    transition-property: background-color;
 }
 
 figure figcaption a {
@@ -241,10 +244,36 @@ td {
     figure {
         width: 32vw;
         height: calc(32vw * 2/3);
+        transition: ease-in-out;
+        transition-duration: 1s;
+        transition-property: box-shadow;
     }
 
     figure:hover {
         box-shadow: -3px 5px 6px rgba(31, 176, 212, 0.8);
+    }
+
+    .carte figure .description {
+        position: relative;
+        background-color: rgba(0,0,0,0.6);
+        padding: 2em;
+        height: calc((32vw * 1/3) + 2px);
+    }
+
+    figure:hover .description {
+        margin-top: -50%;
+        animation-name: details;
+        animation-duration: 1s;
+        animation-iteration-count: 1;
+    }
+
+    @keyframes details {
+        0% { 
+            margin-top: 0;
+        }
+        100%{ 
+            margin-top: -50%;
+        }
     }
 
     figure:hover figcaption {
@@ -289,6 +318,9 @@ td {
         height: calc(26.2vw * 2/3);
     }
 
+
+    /* Utiliser CSS pour créer une animation */
+
     .anim {
         display: flex;
         justify-content: center;
@@ -300,22 +332,33 @@ td {
         background-image: url("img/cupcake.png");
         background-size: cover;
         animation-name: monanim;
-        animation-duration: 5s;
+        animation-duration: 10s;
         animation-iteration-count: infinite;
-        opacity: 0
+        opacity: 0;
     }
 
     #cupcake1 { animation-delay: 0;}
-    #cupcake2 { animation-delay: 0.5s;}
-    #cupcake3 { animation-delay: 1s;}
-    #cupcake4 { animation-delay: 1.5s;}
-    #cupcake5 { animation-delay: 2s;}
-    #cupcake6 { animation-delay: 2.5s;}
-    #cupcake7 { animation-delay: 3s;}
-    #cupcake8 { animation-delay: 3.5s;}
-    #cupcake9 { animation-delay: 4s;}
-    #cupcake10 { animation-delay: 4.5s;}
+    #cupcake2 { animation-delay: 1s;}
+    #cupcake3 { animation-delay: 2s;}
+    #cupcake4 { animation-delay: 3s;}
+    #cupcake5 { animation-delay: 4s;}
+    #cupcake6 { animation-delay: 5s;}
+    #cupcake7 { animation-delay: 6s;}
+    #cupcake8 { animation-delay: 7s;}
+    #cupcake9 { animation-delay: 8s;}
+    #cupcake10 { animation-delay: 9s;}
+    #cupcake11 { animation-delay: 10s;}
+    #cupcake12 { animation-delay: 11s;}
+    #cupcake13 { animation-delay: 12s;}
+    #cupcake14 { animation-delay: 13s;}
+    #cupcake15 { animation-delay: 14s;}
+    #cupcake16 { animation-delay: 15s;}
+    #cupcake17 { animation-delay: 16s;}
+    #cupcake18 { animation-delay: 17s;}
+    #cupcake19 { animation-delay: 18s;}
+    #cupcake20 { animation-delay: 19s;}
 
+    /* Documentation transform: https://developer.mozilla.org/fr/docs/Web/CSS/transform */
     @keyframes monanim {
         0% { 
             transform: rotate(0deg) translateY(0);
