@@ -379,9 +379,32 @@ td {
             opacity: 0;
         }
     }
-    
-
 }
 
+/* *************** PAGE CATEGORIE ****************
+   ************************************************* */
 
+#rec_container {
+    background-color: rgba(0,0,0,0.6);
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 199;
+    display: none;
+}
 
+#recette {
+    background-color: rgb(48, 47, 47);
+    border: 2px solid rgb(31, 176, 212);
+    position: fixed;
+    top: 10vh;
+    left: 10vw;
+    width: 80vw;
+    height: 80vh;
+    z-index: 200;
+}
+
+.elem {
+    cursor: pointer;
+}
