@@ -11,7 +11,8 @@ var recettes = [
         temps: 28,
         difficulte: 0,
         cout: 1,
-        ingredients: "4 tomates rondes assez fermes///4 oeufs///2 oignons cébettes (ou petits oignons)///8 févettes (petites fèves)///1 poivron vert///200 g de thon au naturel///4 filets d'anchois au sel///Olives noires de Nice (si possible)///feuille de basilic///8 radis///Vinaigre de vin rouge///Huile d'olive///Poivre///Sel"
+        ingredients: "4 tomates rondes assez fermes///4 oeufs///2 oignons cébettes (ou petits oignons)///8 févettes (petites fèves)///1 poivron vert///200 g de thon au naturel///4 filets d'anchois au sel///Olives noires de Nice (si possible)///feuille de basilic///8 radis///Vinaigre de vin rouge///Huile d'olive///Poivre///Sel",
+        etapes: "Pour réaliser la salade niçoise, il suffit de rassembler tous les ingrédients, puis de procéder de la manière suivante...///Faire durcir les oeufs (6 à 8 minutes après ébullition de l'eau), puis les faire bien refroidir à l'eau froide.///Hacher les cébettes et les disposer au fond du plat.///Ajouter les févettes, le poivron vert finement coupé, les radis coupés en rondelles et le thon bien égouté et émietté. Mélanger grossièrement tous ces ingrédients avec du sel et du poivre.///Couper les tomates en fines rondelles et les ajouter. Couper les oeufs durs en quartiers et les disposer sur le dessus et ajouter les filets d'anchois, les olives noires et le basilic finement ciselé.///Enfin, saupoudrer de sel et de poivre, puis arroser d'huile d'olive et de vinaigre de vin.///Mettre au frais 1 heure et bien mélanger la salade juste avant de la servir."
     },
     {
         titre: "Tarte aux poireaux", 
@@ -22,7 +23,8 @@ var recettes = [
         temps: 50,
         difficulte: 0,
         cout: 1, 
-        ingredients: "250 g de farine///140 g de beurre///2 cuillères à soupe d'eau///3 poireaux///400 g de lardons///3 oeufs///100 g de fromage râpé///25 cl de crème fraîche///Poivre///Sel"
+        ingredients: "250 g de farine///140 g de beurre///2 cuillères à soupe d'eau///3 poireaux///400 g de lardons///3 oeufs///100 g de fromage râpé///25 cl de crème fraîche///Poivre///Sel",
+        etapes: "Préchauffer le four à 210°C (thermostat 7).///Faire la pâte à tarte : malaxer le beurre et la farine, l'eau, étaler puis mettre dans le plat.///Émincer les poireaux.///Les faire dorer dans un peu de beurre.///Faire dorer les lardons à part.///Les égoutter soigneusement avant de les ajouter aux poireaux.///Faire l'appareil : mêler les oeufs, la crème, le sel et le poivre.///Étaler les poireaux et les lardons sur la pâte.///Parsemer de gruyère râpé, couvrir avec l'appareil.///Mettre au four 25 min."
     }
 ];
 
@@ -34,7 +36,7 @@ for(var i = 0; i < len; i++) {
     // Accés recette => recettes[i]
     // Accés titre d'une recette => recettes[i].titre
     // <li><a href="pages_entrees/recette_salade_nicoise.html">Salade Niçoise</a></li>
-   html += "<li class=\"elem\" id=\"rec" + i + "\">" + recettes[i].titre + "</a></li>";
+   html += "<li class=\"elem\" id=\"rec" + i + "\">" + recettes[i].titre + "</li>";
 }
 
 var liste = document.getElementById("liste");
@@ -75,20 +77,25 @@ function showRecette(index) {
     recetteHtml += "<td>" + recettes[index].difficulte + "</td>";
     recetteHtml += "<td>" + recettes[index].cout + "</td>";
     recetteHtml += "</tr></table>";
-    recetteHtml += formatLst(recettes[index].ingredients);
-    recetteHtml += "</div>";
+    recetteHtml += "</div><div class='contenu'><div class='ul'><h2>Ingrédients</h2>";
+    recetteHtml += formatLst(recettes[index].ingredients, "ul");
+    recetteHtml += "</div><div class='ol'><h2>Etapes</h2>";
+    recetteHtml += formatLst(recettes[index].etapes, "ol");
+    recetteHtml += "</div></div>";
 
     element.innerHTML = recetteHtml;
 }
 
-function formatLst(strToTab) {
+function formatLst(strToTab, type) {
+
     var tab = strToTab.split("///");
-    var listHtml = "<ul>";
+    var listHtml = "<" + type + ">";
     var max = tab.length;
     for(var i = 0; i < max; i++) {
         listHtml += "<li>" + tab[i] + "</li>";
     }
-    listHtml += "</ul>";
+
+    listHtml += "</" + type + ">";
     
     return listHtml;
 }
