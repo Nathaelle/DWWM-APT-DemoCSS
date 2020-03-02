@@ -10,7 +10,8 @@ var recettes = [
         personnes: 4,
         temps: 28,
         difficulte: 0,
-        cout: 1
+        cout: 1,
+        ingredients: "4 tomates rondes assez fermes///4 oeufs///2 oignons cébettes (ou petits oignons)///8 févettes (petites fèves)///1 poivron vert///200 g de thon au naturel///4 filets d'anchois au sel///Olives noires de Nice (si possible)///feuille de basilic///8 radis///Vinaigre de vin rouge///Huile d'olive///Poivre///Sel"
     },
     {
         titre: "Tarte aux poireaux", 
@@ -20,7 +21,8 @@ var recettes = [
         personnes: 6,
         temps: 50,
         difficulte: 0,
-        cout: 1
+        cout: 1, 
+        ingredients: "250 g de farine///140 g de beurre///2 cuillères à soupe d'eau///3 poireaux///400 g de lardons///3 oeufs///100 g de fromage râpé///25 cl de crème fraîche///Poivre///Sel"
     }
 ];
 
@@ -67,6 +69,12 @@ function showRecette(index) {
     recetteHtml += "<div class=\"description\">";
     recetteHtml += "<h2>" + recettes[index].titre + "</h2>";
     recetteHtml += "<p>" + recettes[index].description + "</p>";
+    recetteHtml += "<table><tr><th>Personnes</th><th>Temps</th><th>Difficulté</th><th>Coût</th></tr><tr>";
+    recetteHtml += "<td>" + recettes[index].personnes + "</td>";
+    recetteHtml += "<td>" + recettes[index].temps + "</td>";
+    recetteHtml += "<td>" + recettes[index].difficulte + "</td>";
+    recetteHtml += "<td>" + recettes[index].cout + "</td>";
+    recetteHtml += "</tr></table>";
     recetteHtml += "</div>";
 
     element.innerHTML = recetteHtml;
