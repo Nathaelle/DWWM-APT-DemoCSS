@@ -5,12 +5,22 @@ var recettes = [
     {
         titre: "Salade Niçoise", 
         page: "recette_salade_nicoise.html",
-        image: "salade.jpg"
+        image: "salade.jpg",
+        description: "Fraîche, très parfumée, savoureuse au mille saveurs tout autant que simple, telle est la salade niçoise. A consommer sans modération en été, pour profiter des bons produits frais.",
+        personnes: 4,
+        temps: 28,
+        difficulte: 0,
+        cout: 1
     },
     {
         titre: "Tarte aux poireaux", 
         page: "recette_tarte_poireaux.html",
-        image: "tarte.jpg"
+        image: "tarte.jpg",
+        description: "Servir avec une salade verte.",
+        personnes: 6,
+        temps: 50,
+        difficulte: 0,
+        cout: 1
     }
 ];
 
@@ -49,4 +59,15 @@ for(var i = 0; i < len; i++) {
 function showRecette(index) {
     console.log("Vous avez demandé la recette " + recettes[index].titre);
     container.style.display = "block";
+
+    var element = document.getElementById('recette');
+
+    var recetteHtml = "";
+    recetteHtml += "<img src=\"../img/" + recettes[index].image + "\">";
+    recetteHtml += "<div class=\"description\">";
+    recetteHtml += "<h2>" + recettes[index].titre + "</h2>";
+    recetteHtml += "<p>" + recettes[index].description + "</p>";
+    recetteHtml += "</div>";
+
+    element.innerHTML = recetteHtml;
 }

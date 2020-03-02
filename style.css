@@ -403,6 +403,27 @@ td {
     width: 80vw;
     height: 80vh;
     z-index: 200;
+    padding: 2em;
+    display: flex;
+}
+
+#recette .description {
+    padding: 0 2em;
+}
+
+#recette .description table {
+    padding: 0 2em;
+    margin: 2em 0;
+}
+
+.description table td, .description table th {
+    padding: 1.5em;
+}
+
+#recette img {
+    display: block;
+    width: 40vw;
+    height: calc(40vw * 2/3);
 }
 
 .elem {
