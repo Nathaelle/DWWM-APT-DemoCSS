@@ -75,7 +75,20 @@ function showRecette(index) {
     recetteHtml += "<td>" + recettes[index].difficulte + "</td>";
     recetteHtml += "<td>" + recettes[index].cout + "</td>";
     recetteHtml += "</tr></table>";
+    recetteHtml += formatLst(recettes[index].ingredients);
     recetteHtml += "</div>";
 
     element.innerHTML = recetteHtml;
+}
+
+function formatLst(strToTab) {
+    var tab = strToTab.split("///");
+    var listHtml = "<ul>";
+    var max = tab.length;
+    for(var i = 0; i < max; i++) {
+        listHtml += "<li>" + tab[i] + "</li>";
+    }
+    listHtml += "</ul>";
+    
+    return listHtml;
 }

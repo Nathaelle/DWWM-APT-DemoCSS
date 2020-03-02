@@ -422,8 +422,8 @@ td {
 
 #recette img {
     display: block;
-    width: 40vw;
     height: calc(40vw * 2/3);
+    width: 40vw;
 }
 
 .elem {
