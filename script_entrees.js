@@ -102,3 +102,54 @@ function formatLst(strToTab, type) {
     
     return listHtml;
 }
+
+/* Fonctionnalité "Ajouter une nouvelle recette" */ 
+
+// 1. Récupérer l'élément formulaire (et l'afficher en console)
+var formulaire = document.getElementById("formAjout");
+console.log(formulaire);
+
+// 2. Ajouter un listener sur son évènement submit (et afficher en console "Le formulaire a été soumis")
+// 3. Lorsque que le formulaire est soumis, afficher en plus dans la console, l'élément input pour la saisie du titre
+// 4. Afficher la valeur de cet élément (toujours lors de la soumission du formulaire)
+// 5. Stocker cette valeur dans une variable "titre"
+// 6. Répéter l'opération avec les valeurs de tous les champs
+
+formulaire.addEventListener("submit", (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+
+    var titre = document.getElementsByName("titre")[0].value;
+    //document.getElementById("titre").value = "";
+    console.log(titre);
+
+    var description = document.getElementsByName("description")[0].value;
+    //document.getElementById("description").value = "";
+    console.log(description);
+
+    var personnes = parseInt(document.getElementsByName("nbPers")[0].value);
+    //document.getElementById("personnes").value = "";
+    console.log(personnes);
+
+    var temps = parseInt(document.getElementsByName("temps")[0].value);
+    //document.getElementById("temps").value = "";
+    console.log(temps);
+
+    var image = document.getElementsByName("image")[0].value;
+    //document.getElementById("image").value = "";
+    console.log(image);
+
+    var ingredients = document.getElementsByName("ingredients")[0].value;
+    //document.getElementById("ingredients").value = "";
+    console.log(ingredients);
+
+    var etapes = document.getElementsByName("etapes")[0].value;
+    //document.getElementById("etapes").value = "";
+    console.log(etapes);
+
+    var couts = document.getElementsByName("cout");
+    console.log(couts);
+
+    var difficulte = document.querySelectorAll("#difficulte option");
+    console.log(difficulte);
+});
