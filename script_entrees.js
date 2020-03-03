@@ -46,7 +46,7 @@ liste.innerHTML = html;
 /* Fonctionnalité modale */
 
 var container = document.getElementById("rec_container");
-container.addEventListener("click", () => {
+container.addEventListener("click", (e) => {
     container.style.display = "none";
 });
 
@@ -65,6 +65,9 @@ function showRecette(index) {
     container.style.display = "block";
 
     var element = document.getElementById('recette');
+    element.addEventListener("click", (e) => {
+        e.stopPropagation();
+    });
 
     var recetteHtml = "";
     recetteHtml += "<img src=\"../img/" + recettes[index].image + "\">";
