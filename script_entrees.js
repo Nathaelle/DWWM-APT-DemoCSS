@@ -121,35 +121,54 @@ formulaire.addEventListener("submit", (e) => {
 
     var titre = document.getElementsByName("titre")[0].value;
     //document.getElementById("titre").value = "";
-    console.log(titre);
+    //console.log(titre);
 
     var description = document.getElementsByName("description")[0].value;
     //document.getElementById("description").value = "";
-    console.log(description);
+    //console.log(description);
 
     var personnes = parseInt(document.getElementsByName("nbPers")[0].value);
     //document.getElementById("personnes").value = "";
-    console.log(personnes);
+    //console.log(personnes);
 
     var temps = parseInt(document.getElementsByName("temps")[0].value);
     //document.getElementById("temps").value = "";
-    console.log(temps);
+    //console.log(temps);
 
     var image = document.getElementsByName("image")[0].value;
     //document.getElementById("image").value = "";
-    console.log(image);
+    //console.log(image);
 
     var ingredients = document.getElementsByName("ingredients")[0].value;
     //document.getElementById("ingredients").value = "";
-    console.log(ingredients);
+    //console.log(ingredients);
 
     var etapes = document.getElementsByName("etapes")[0].value;
     //document.getElementById("etapes").value = "";
-    console.log(etapes);
+    //console.log(etapes);
 
     var couts = document.getElementsByName("cout");
-    console.log(couts);
+    var cout = 0;
+    for(let el of couts) {
+        if(el.checked) {
+            cout = parseInt(el.value);
+        }
+    }
+    //console.log(couts);
+    //console.log(cout);
 
-    var difficulte = document.querySelectorAll("#difficulte option");
-    console.log(difficulte);
+    var difficultes = document.querySelectorAll("#difficulte option");
+    var difficulte = 0;
+    for(let el of difficultes) {
+        if(el.selected) {
+            difficulte = parseInt(el.textContent);
+        }
+    }
+    //console.log(difficultes);
+    //console.log(difficulte);
+
+    var recette = {
+
+    }
+    console.log(recette);
 });
